@@ -27,7 +27,7 @@ app.add_middleware(
 # ========= Request Models =========
 class GenerateReadmeRequest(BaseModel):
     repo_url: str
-    # api_key: str
+    api_key: str
 
 # ========= AES Decryption =========
 def derive_key_and_iv(password: str, salt: bytes, key_len=32, iv_len=16):
