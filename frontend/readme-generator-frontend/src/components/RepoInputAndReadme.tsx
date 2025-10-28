@@ -29,7 +29,7 @@ const RepoInputAndReadme = ({ apiKey }: RepoInputAndReadmeProps) => {
       const res = await fetch("https://readmify.onrender.com/generate-readme", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ repo_url: repoUrl }),
+        body: JSON.stringify({ repo_url: repoUrl,api_key: apiKey  }),
       });
 
       if (!res.ok) throw new Error("Failed to generate README");
