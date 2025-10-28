@@ -21,7 +21,7 @@ const ApiInput = ({ value, onChange, onValidationChange }: ApiKeyInputProps) => 
       const encryptedApiKey = encryptApiKey(value);
 
       const res = await fetch(
-        `http://127.0.0.1:8000/validate-api-key?api_key=${encryptedApiKey}`,
+        `https://readmify.onrender.com/validate-api-key?api_key=${encryptedApiKey}`,
         { method: "POST" }
       );
       const data = await res.json();
