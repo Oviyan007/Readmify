@@ -27,11 +27,10 @@ const RepoInputAndReadme = ({ apiKey }: RepoInputAndReadmeProps) => {
     setError(null);
     const encryptedKey = encryptApiKey(apiKey);
     try {
-      // console.log("Sending payload:", { repo_url: repoUrl, api_key: encryptedKey });
-      const res = await fetch("http://127.0.0.1:8000/generate-readme", {
+      const res = await fetch("https://readmify.onrender.com/generate-readme", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ repo_url: repoUrl,api_key:encryptedKey }),
+        body: JSON.stringify({ repo_url: repoUrl,api_key: apiKey  }),
       });
 
       if (!res.ok) throw new Error("Failed to generate README");

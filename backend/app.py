@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv("ENCRYPTION_KEY", "elevate-resume-ai-secret-key-2024")
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://readmify-teal.vercel.app/","http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
