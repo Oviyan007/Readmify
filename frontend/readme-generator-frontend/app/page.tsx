@@ -26,7 +26,7 @@ export default function HomePage() {
           
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/Oviyan007/Readmify"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-xl text-sm font-medium bg-gray-900 hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 text-white transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105"
