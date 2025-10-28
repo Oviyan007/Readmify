@@ -8,6 +8,7 @@ import {
   AlertCircle 
 } from "lucide-react";
 
+import { encryptApiKey } from "../utils/encryption";
 interface RepoInputAndReadmeProps {
   apiKey: string;
 }
@@ -24,12 +25,13 @@ const RepoInputAndReadme = ({ apiKey }: RepoInputAndReadmeProps) => {
     setIsGenerating(true);
     setReadme(null);
     setError(null);
-
+    const encryptedKey = encryptApiKey(apiKey);
     try {
+      // console.log("Sending payload:", { repo_url: repoUrl, api_key: encryptedKey });
       const res = await fetch("http://127.0.0.1:8000/generate-readme", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ repo_url: repoUrl }),
+        body: JSON.stringify({ repo_url: repoUrl,api_key:encryptedKey }),
       });
 
       if (!res.ok) throw new Error("Failed to generate README");

@@ -75,7 +75,7 @@ const ApiInput = ({ value, onChange, onValidationChange }: ApiKeyInputProps) => 
             ? "bg-gray-300 dark:bg-gray-700 cursor-not-allowed"
             : "bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
           }`}
-      >
+      > 
         {isValidating ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
